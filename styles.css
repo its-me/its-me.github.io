@@ -121,11 +121,7 @@ a   { color: inherit; text-decoration: none; }
   display: block;
   flex-shrink: 0;
   align-self: flex-start;
-  border-radius: 4px;
-  transition: opacity 0.15s ease, transform 0.15s ease;
 }
-.follow-inline img   { width: 114px; height: auto; }
-.follow-inline:hover { opacity: 0.85; transform: translateY(-1px); }
 
 /* Follow badge — corner (outside body): hidden until ≥1024 */
 .follow-corner { display: none; }
@@ -185,11 +181,7 @@ a   { color: inherit; text-decoration: none; }
     display: block;
     flex-shrink: 0;
     align-self: flex-start;
-    border-radius: 4px;
-    transition: opacity 0.15s ease, transform 0.15s ease;
   }
-  .follow-corner img   { width: 114px; height: auto; }
-  .follow-corner:hover { opacity: 0.85; transform: translateY(-1px); }
 }
 
 /* Constrain bio width at large viewports (Figma: w-[500px]) */
