@@ -33,31 +33,43 @@
 </head>
 <body>
   <main class="page">
-    <!-- Intro -->
+
+    <!-- ── Intro ─────────────────────────────────────────────── -->
     <header class="intro">
+
+      <!--
+        Eyebrow shown only at ≤639 (sits above the photo in the stacked layout).
+        At ≥640 this is hidden; the duplicate inside .intro-body is shown instead.
+      -->
+      <p class="eyebrow eyebrow-sm">ENTREPRENEUR&nbsp;&nbsp;·&nbsp;&nbsp;ENGINEERING LEADER</p>
+
       <div class="photo">
         <img src="assets/photo.png" alt="Portrait of Sergey Kanafyev" />
       </div>
 
       <div class="intro-body">
         <div class="title-group">
-          <p class="eyebrow">ENTREPRENEUR&nbsp;&nbsp;·&nbsp;&nbsp;ENGINEERING LEADER</p>
+          <!-- Eyebrow hidden at ≤639, shown at ≥640 (inline with the name) -->
+          <p class="eyebrow eyebrow-lg">ENTREPRENEUR&nbsp;&nbsp;·&nbsp;&nbsp;ENGINEERING LEADER</p>
           <h1 class="name">Sergey Kanafyev</h1>
         </div>
-        <p class="bio">
-          I am a tech-focused entrepreneur and engineering leader with over 20 years
-          of experience across startups and software engineering. I specialize in
-          transforming complex technical challenges into scalable business assets.
-        </p>
+        <p class="bio">I am a tech-focused entrepreneur and engineering leader with over 20 years of experience across startups and software engineering. I specialize in transforming complex technical challenges into scalable business assets.</p>
+
+        <!-- Badge shown inside the body at ≤1023 (640 and 420 layouts) -->
+        <a class="follow follow-inline" href="https://github.com/its-me" target="_blank" rel="noopener" aria-label="Follow @its-me on GitHub">
+          <img src="assets/follow-badge.png" alt="Follow @its-me on GitHub" />
+        </a>
       </div>
 
-      <a class="follow" href="https://github.com/its-me" target="_blank" rel="noopener" aria-label="Follow @its-me on GitHub">
+      <!-- Badge shown as a top-right corner item at ≥1024 -->
+      <a class="follow follow-corner" href="https://github.com/its-me" target="_blank" rel="noopener" aria-label="Follow @its-me on GitHub">
         <img src="assets/follow-badge.png" alt="Follow @its-me on GitHub" />
       </a>
+
     </header>
 
-    <!-- Ventures + Tinkering -->
-    <div class="grid-2">
+    <!-- ── Ventures + Tinkering ──────────────────────────────── -->
+    <div class="vt-grid">
       <section class="panel">
         <div class="panel-head">
           <span class="label">VENTURES</span>
@@ -93,13 +105,13 @@
       </section>
     </div>
 
-    <!-- Profiles -->
-    <section class="panel">
+    <!-- ── Profiles ──────────────────────────────────────────── -->
+    <section class="panel panel-wide">
       <div class="panel-head">
         <span class="label">PROFILES</span>
         <span class="caption">around the web</span>
       </div>
-      <div class="grid-2">
+      <div class="profiles-cols">
         <div class="col">
           <a class="row" href="https://www.linkedin.com/in/sergey-kanafyev" target="_blank" rel="noopener">
             <span class="row-main">
@@ -167,13 +179,13 @@
       </div>
     </section>
 
-    <!-- Get in touch -->
-    <section class="panel">
+    <!-- ── Get in touch ──────────────────────────────────────── -->
+    <section class="panel panel-wide">
       <div class="panel-head">
         <span class="label">GET IN TOUCH</span>
         <span class="caption">direct lines</span>
       </div>
-      <div class="grid-3">
+      <div class="contact-grid">
         <a class="row" href="mailto:sergeykanafyev@gmail.com">
           <span class="row-main">
             <img class="icon" src="assets/mail.svg" alt="" aria-hidden="true" />
@@ -208,6 +220,7 @@
     </section>
 
     <footer class="footer">© 2026 Sergey Kanafyev</footer>
+
   </main>
 </body>
 </html>
