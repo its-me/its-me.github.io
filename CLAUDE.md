@@ -68,22 +68,19 @@ The `<img>` inside `.photo` is `absolute inset-0 w-full h-full object-cover`. Th
 
 ## Row pattern
 
-Every clickable row uses `group` for child hover effects:
+Rows are non-interactive `<div>`s. Only the handle + arrow on the right side is a link:
 
 ```html
-<a class="group flex items-center justify-between gap-4 py-[13px] px-1
-           border-b border-black/[.08]
-           transition-all duration-150
-           hover:bg-black/[.035] hover:pl-2" href="...">
+<div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
   <span class="flex items-center gap-3.5 shrink-0">
     <img class="shrink-0 w-[18px] h-[18px] object-contain" ... />
     <span class="text-base font-semibold whitespace-nowrap">Name</span>
   </span>
-  <span class="flex items-center gap-2 text-[13px] min-w-0">
-    <span class="text-muted ... transition-colors duration-150 group-hover:text-black">@handle</span>
-    <span class="shrink-0 font-mono transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
-  </span>
-</a>
+  <a class="flex items-center gap-2 text-[13px] min-w-0" href="..." target="_blank" rel="noopener">
+    <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@handle</span>
+    <span class="shrink-0 font-mono">↗</span>
+  </a>
+</div>
 ```
 
 Ventures/Tinkering rows use `py-3.5` (14px) and `text-[17px]` for the name. All others use `py-[13px]` and `text-base`.

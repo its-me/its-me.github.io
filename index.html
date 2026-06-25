@@ -49,36 +49,19 @@
 </head>
 <body class="bg-[#e9e9e9] text-black font-sans antialiased">
 
-  <!--
-    Breakpoints (Option C — Tailwind md/lg/xl):
-      base  <768px   p-6  (24px)   1-col
-      md   ≥768px   p-12 (48px)   2-col
-      lg  ≥1024px   p-20 (80px)   3-col contact
-      xl  ≥1280px   max-w-[960px] centered
-  -->
   <main class="flex flex-col gap-6 p-6 md:p-12 lg:px-20 lg:py-12 xl:max-w-[960px] xl:mx-auto xl:px-0 xl:py-16">
 
     <!-- ── Intro ─────────────────────────────────────────────── -->
     <header class="flex flex-col gap-7 md:flex-row md:items-start md:gap-8 lg:gap-20">
 
-      <!-- Eyebrow: above photo on mobile only -->
       <p class="block md:hidden text-accent text-xs tracking-[0.02em]">ENTREPRENEUR&nbsp;&nbsp;·&nbsp;&nbsp;ENGINEERING LEADER</p>
 
-      <!--
-        Photo: full-width with aspect-ratio on mobile.
-        At md+: grows to fill half the row, height from align-self:stretch.
-        At lg+: fixed 150px width, height from body column height.
-        The <img> is absolute so the div has zero content height —
-        aspect-ratio at mobile works because width is definite (100%).
-      -->
       <div class="relative rounded-3xl overflow-hidden shrink-0 w-full aspect-[420/359] md:flex-1 md:w-auto md:aspect-auto md:self-stretch lg:flex-none lg:w-[150px]">
         <img class="absolute inset-0 w-full h-full object-cover" src="assets/photo.png" alt="Portrait of Sergey Kanafyev" />
       </div>
 
-      <!-- Body -->
       <div class="flex flex-col gap-7 md:flex-1 md:min-w-0">
         <div class="flex flex-col gap-[22px]">
-          <!-- Eyebrow: hidden on mobile, shown on tablet+ -->
           <p class="hidden md:block text-accent text-xs tracking-[0.02em]">ENTREPRENEUR&nbsp;&nbsp;·&nbsp;&nbsp;ENGINEERING LEADER</p>
           <h1 class="text-5xl font-medium leading-[0.98] tracking-[-0.01em] lg:whitespace-nowrap">Sergey Kanafyev</h1>
         </div>
@@ -95,16 +78,16 @@
           <span class="text-accent tracking-[0.04em]">VENTURES</span>
           <span class="text-muted">what I'm building</span>
         </div>
-        <a class="group flex items-center justify-between gap-4 py-3.5 px-1 border-b border-black/[.08] transition-all duration-150 hover:bg-black/[.035] hover:pl-2" href="https://wheele.rs" target="_blank" rel="noopener">
+        <div class="flex items-center justify-between gap-4 py-3.5 px-1 border-b border-black/[.08]">
           <span class="flex items-center gap-3.5 shrink-0">
             <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/wheelers.svg" alt="" aria-hidden="true" />
             <span class="text-[17px] font-semibold whitespace-nowrap">Wheelers</span>
           </span>
-          <span class="flex items-center gap-2 text-[13px] min-w-0">
-            <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap transition-colors duration-150 group-hover:text-black">Founder &amp; CEO</span>
-            <span class="shrink-0 font-mono transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
-          </span>
-        </a>
+          <a class="flex items-center gap-2 text-[13px] min-w-0" href="https://wheele.rs" target="_blank" rel="noopener">
+            <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">Founder &amp; CEO</span>
+            <span class="shrink-0 font-mono">↗</span>
+          </a>
+        </div>
       </section>
 
       <section class="flex flex-col min-w-0 flex-1">
@@ -112,16 +95,16 @@
           <span class="text-accent tracking-[0.04em]">TINKERING</span>
           <span class="text-muted">off the clock</span>
         </div>
-        <a class="group flex items-center justify-between gap-4 py-3.5 px-1 border-b border-black/[.08] transition-all duration-150 hover:bg-black/[.035] hover:pl-2" href="https://aur.archlinux.org/packages?SeB=M&amp;K=itsme" target="_blank" rel="noopener">
+        <div class="flex items-center justify-between gap-4 py-3.5 px-1 border-b border-black/[.08]">
           <span class="flex items-center gap-3.5 shrink-0">
             <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/archlinux.svg" alt="" aria-hidden="true" />
             <span class="text-[17px] font-semibold whitespace-nowrap">AUR Packages</span>
           </span>
-          <span class="flex items-center gap-2 text-[13px] min-w-0">
-            <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap transition-colors duration-150 group-hover:text-black">@itsme</span>
-            <span class="shrink-0 font-mono transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
-          </span>
-        </a>
+          <a class="flex items-center gap-2 text-[13px] min-w-0" href="https://aur.archlinux.org/packages?SeB=M&amp;K=itsme" target="_blank" rel="noopener">
+            <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@itsme</span>
+            <span class="shrink-0 font-mono">↗</span>
+          </a>
+        </div>
       </section>
 
     </div>
@@ -135,69 +118,69 @@
       <div class="flex flex-col md:flex-row md:gap-6 xl:gap-10">
 
         <div class="flex-1 min-w-0 flex flex-col">
-          <a class="group flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08] transition-all duration-150 hover:bg-black/[.035] hover:pl-2" href="https://www.linkedin.com/in/sergey-kanafyev" target="_blank" rel="noopener">
+          <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
             <span class="flex items-center gap-3.5 shrink-0">
               <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/linkedin.svg" alt="" aria-hidden="true" />
               <span class="text-base font-semibold whitespace-nowrap">LinkedIn</span>
             </span>
-            <span class="flex items-center gap-2 text-[13px] min-w-0">
-              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap transition-colors duration-150 group-hover:text-black">@sergey-kanafyev</span>
-              <span class="shrink-0 font-mono transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
-            </span>
-          </a>
-          <a class="group flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08] transition-all duration-150 hover:bg-black/[.035] hover:pl-2" href="https://github.com/its-me" target="_blank" rel="noopener">
+            <a class="flex items-center gap-2 text-[13px] min-w-0" href="https://www.linkedin.com/in/sergey-kanafyev" target="_blank" rel="noopener">
+              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@sergey-kanafyev</span>
+              <span class="shrink-0 font-mono">↗</span>
+            </a>
+          </div>
+          <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
             <span class="flex items-center gap-3.5 shrink-0">
               <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/github.svg" alt="" aria-hidden="true" />
               <span class="text-base font-semibold whitespace-nowrap">GitHub</span>
             </span>
-            <span class="flex items-center gap-2 text-[13px] min-w-0">
-              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap transition-colors duration-150 group-hover:text-black">@its-me</span>
-              <span class="shrink-0 font-mono transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
-            </span>
-          </a>
-          <a class="group flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08] transition-all duration-150 hover:bg-black/[.035] hover:pl-2" href="https://x.com/kanafyev" target="_blank" rel="noopener">
+            <a class="flex items-center gap-2 text-[13px] min-w-0" href="https://github.com/its-me" target="_blank" rel="noopener">
+              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@its-me</span>
+              <span class="shrink-0 font-mono">↗</span>
+            </a>
+          </div>
+          <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
             <span class="flex items-center gap-3.5 shrink-0">
               <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/x.svg" alt="" aria-hidden="true" />
               <span class="text-base font-semibold whitespace-nowrap">X</span>
             </span>
-            <span class="flex items-center gap-2 text-[13px] min-w-0">
-              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap transition-colors duration-150 group-hover:text-black">@kanafyev</span>
-              <span class="shrink-0 font-mono transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
-            </span>
-          </a>
+            <a class="flex items-center gap-2 text-[13px] min-w-0" href="https://x.com/kanafyev" target="_blank" rel="noopener">
+              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@kanafyev</span>
+              <span class="shrink-0 font-mono">↗</span>
+            </a>
+          </div>
         </div>
 
         <div class="flex-1 min-w-0 flex flex-col">
-          <a class="group flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08] transition-all duration-150 hover:bg-black/[.035] hover:pl-2" href="https://www.facebook.com/skanafev" target="_blank" rel="noopener">
+          <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
             <span class="flex items-center gap-3.5 shrink-0">
               <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/facebook.svg" alt="" aria-hidden="true" />
               <span class="text-base font-semibold whitespace-nowrap">Facebook</span>
             </span>
-            <span class="flex items-center gap-2 text-[13px] min-w-0">
-              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap transition-colors duration-150 group-hover:text-black">@skanafev</span>
-              <span class="shrink-0 font-mono transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
-            </span>
-          </a>
-          <a class="group flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08] transition-all duration-150 hover:bg-black/[.035] hover:pl-2" href="https://www.instagram.com/sergey.kanafyev" target="_blank" rel="noopener">
+            <a class="flex items-center gap-2 text-[13px] min-w-0" href="https://www.facebook.com/skanafev" target="_blank" rel="noopener">
+              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@skanafev</span>
+              <span class="shrink-0 font-mono">↗</span>
+            </a>
+          </div>
+          <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
             <span class="flex items-center gap-3.5 shrink-0">
               <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/instagram.svg" alt="" aria-hidden="true" />
               <span class="text-base font-semibold whitespace-nowrap">Instagram</span>
             </span>
-            <span class="flex items-center gap-2 text-[13px] min-w-0">
-              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap transition-colors duration-150 group-hover:text-black">@sergey.kanafyev</span>
-              <span class="shrink-0 font-mono transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
-            </span>
-          </a>
-          <a class="group flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08] transition-all duration-150 hover:bg-black/[.035] hover:pl-2" href="https://www.threads.com/@sergey.kanafyev" target="_blank" rel="noopener">
+            <a class="flex items-center gap-2 text-[13px] min-w-0" href="https://www.instagram.com/sergey.kanafyev" target="_blank" rel="noopener">
+              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@sergey.kanafyev</span>
+              <span class="shrink-0 font-mono">↗</span>
+            </a>
+          </div>
+          <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
             <span class="flex items-center gap-3.5 shrink-0">
               <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/threads.svg" alt="" aria-hidden="true" />
               <span class="text-base font-semibold whitespace-nowrap">Threads</span>
             </span>
-            <span class="flex items-center gap-2 text-[13px] min-w-0">
-              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap transition-colors duration-150 group-hover:text-black">@sergey.kanafyev</span>
-              <span class="shrink-0 font-mono transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
-            </span>
-          </a>
+            <a class="flex items-center gap-2 text-[13px] min-w-0" href="https://www.threads.com/@sergey.kanafyev" target="_blank" rel="noopener">
+              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@sergey.kanafyev</span>
+              <span class="shrink-0 font-mono">↗</span>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -210,36 +193,36 @@
         <span class="text-muted">direct lines</span>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 md:gap-x-6 lg:grid-cols-3 xl:gap-x-10">
-        <a class="group flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08] transition-all duration-150 hover:bg-black/[.035] hover:pl-2" href="mailto:sergeykanafyev@gmail.com">
+        <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
           <span class="flex items-center gap-3.5 shrink-0">
             <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/mail.svg" alt="" aria-hidden="true" />
             <span class="text-base font-semibold whitespace-nowrap">Email</span>
           </span>
-          <span class="flex items-center gap-2 text-[13px] min-w-0">
-            <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap transition-colors duration-150 group-hover:text-black">sergeykanafyev@gmail.com</span>
-            <span class="shrink-0 font-mono transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
-          </span>
-        </a>
-        <a class="group flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08] transition-all duration-150 hover:bg-black/[.035] hover:pl-2" href="https://t.me/kanafyev" target="_blank" rel="noopener">
+          <a class="flex items-center gap-2 text-[13px] min-w-0" href="mailto:sergeykanafyev@gmail.com">
+            <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">sergeykanafyev@gmail.com</span>
+            <span class="shrink-0 font-mono">↗</span>
+          </a>
+        </div>
+        <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
           <span class="flex items-center gap-3.5 shrink-0">
             <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/telegram.svg" alt="" aria-hidden="true" />
             <span class="text-base font-semibold whitespace-nowrap">Telegram</span>
           </span>
-          <span class="flex items-center gap-2 text-[13px] min-w-0">
-            <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap transition-colors duration-150 group-hover:text-black">@kanafyev</span>
-            <span class="shrink-0 font-mono transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
-          </span>
-        </a>
-        <a class="group flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08] transition-all duration-150 hover:bg-black/[.035] hover:pl-2" href="https://wa.me/6281237702160" target="_blank" rel="noopener">
+          <a class="flex items-center gap-2 text-[13px] min-w-0" href="https://t.me/kanafyev" target="_blank" rel="noopener">
+            <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@kanafyev</span>
+            <span class="shrink-0 font-mono">↗</span>
+          </a>
+        </div>
+        <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
           <span class="flex items-center gap-3.5 shrink-0">
             <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/whatsapp.svg" alt="" aria-hidden="true" />
             <span class="text-base font-semibold whitespace-nowrap">WhatsApp</span>
           </span>
-          <span class="flex items-center gap-2 text-[13px] min-w-0">
-            <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap transition-colors duration-150 group-hover:text-black">+62 812-3770-2160</span>
-            <span class="shrink-0 font-mono transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
-          </span>
-        </a>
+          <a class="flex items-center gap-2 text-[13px] min-w-0" href="https://wa.me/6281237702160" target="_blank" rel="noopener">
+            <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">+62 812-3770-2160</span>
+            <span class="shrink-0 font-mono">↗</span>
+          </a>
+        </div>
       </div>
     </section>
 
