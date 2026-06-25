@@ -6,7 +6,7 @@ Published at https://its-me.github.io
 
 ## Stack
 
-Plain HTML + **Tailwind CSS** (Play CDN) — no build step, no dependencies. Fonts (Wix Madefor Display, IBM Plex Mono) loaded from Google Fonts; all icons and the portrait vendored under `assets/`.
+Plain HTML + **Tailwind CSS** (Play CDN) — no build step, no dependencies. Font (Work Sans) loaded from Google Fonts; all icons and the portrait vendored under `assets/`.
 
 ```
 index.html      # markup + Tailwind utility classes

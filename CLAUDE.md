@@ -11,8 +11,7 @@ tailwind.config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Wix Madefor Display"', 'system-ui', '-apple-system', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', 'ui-monospace', 'Menlo', 'monospace'],
+        sans: ['"Work Sans"', 'system-ui', '-apple-system', 'sans-serif'],
       },
       colors: {
         accent: '#0078b8',  // blue — labels, eyebrow
@@ -42,7 +41,7 @@ Page shell: `flex flex-col gap-6 p-6 md:p-12 lg:px-20 lg:py-12 xl:max-w-[960px] 
 <main>                         flex-col gap-6
   <header.intro>               flex-col → md:flex-row gap-7/8/20
     <p.eyebrow-mobile>         block md:hidden
-    <div.photo>                aspect-[420/359] → md:flex-1 → lg:w-[150px]
+    <div.photo>                aspect-[420/359] → md:w-[220px] → lg:w-[200px] → xl:w-[240px]
     <div.body>                 flex-col gap-7, md:flex-1
       <p.eyebrow-desktop>      hidden md:block
       <h1.name>                text-5xl, lg:whitespace-nowrap
@@ -63,8 +62,9 @@ Contact grid uses `gap-x-6` (column gap only, **no row gap**). Using `gap-6` wou
 
 The `<img>` inside `.photo` is `absolute inset-0 w-full h-full object-cover`. This removes intrinsic content from the div so that:
 - At mobile (`w-full aspect-[420/359]`): width is 100% (definite) → aspect-ratio resolves height correctly.
-- At `md` (`flex-1 self-stretch aspect-auto`): height = body column height via stretch; width = flex growth.
-- At `lg` (`flex-none w-[150px] self-stretch`): width is fixed; height = body column height via stretch.
+- At `md`+ (`flex-none self-stretch aspect-auto`): width is fixed per breakpoint; height = body column height via stretch.
+
+Photo widths: `md:w-[220px]` / `lg:w-[200px]` / `xl:w-[240px]`. The lg dip (200px) is because the header gap widens to 80px at lg, so a slightly smaller photo keeps body text comfortable. xl grows back to 240px as the full 960px content width has room for it.
 
 ## Row pattern
 
@@ -74,16 +74,16 @@ Rows are non-interactive `<div>`s. Only the handle + arrow on the right side is 
 <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
   <span class="flex items-center gap-3.5 shrink-0">
     <img class="shrink-0 w-[18px] h-[18px] object-contain" ... />
-    <span class="text-base font-semibold whitespace-nowrap">Name</span>
+    <span class="text-[17px] font-semibold whitespace-nowrap">Name</span>
   </span>
-  <a class="flex items-center gap-2 text-[13px] min-w-0" href="..." target="_blank" rel="noopener">
+  <a class="flex items-center gap-2 text-[14px] min-w-0" href="..." target="_blank" rel="noopener">
     <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@handle</span>
-    <span class="shrink-0 font-mono">↗</span>
+    <span class="shrink-0">↗</span>
   </a>
 </div>
 ```
 
-Ventures/Tinkering rows use `py-3.5` (14px) and `text-[17px]` for the name. All others use `py-[13px]` and `text-base`.
+Ventures/Tinkering rows use `py-3.5` (14px) and `text-[18px]` for the name. All others use `py-[13px]` and `text-[17px]`. The ↗ arrow inherits the main font (no `font-mono`).
 
 ## Panel head pattern
 
