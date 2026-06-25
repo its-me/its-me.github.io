@@ -1,0 +1,96 @@
+# Site layout reference
+
+## Stack
+
+Static HTML + Tailwind CSS via **Play CDN** (`https://cdn.tailwindcss.com`). No build step. Fonts from Google Fonts. All assets vendored under `assets/`.
+
+## Tailwind theme extension
+
+```js
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['"Wix Madefor Display"', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'ui-monospace', 'Menlo', 'monospace'],
+      },
+      colors: {
+        accent: '#0078b8',  // blue — labels, eyebrow
+        muted:  '#6e6e6e',  // secondary text — handles, captions, footer
+      },
+    },
+  },
+}
+```
+
+Body background is `#e9e9e9` (not in theme, applied as `bg-[#e9e9e9]`).
+
+## Breakpoints — Option C (Tailwind md / lg / xl)
+
+| State | Min-width | Padding | Content width | Column layout |
+|---|---|---|---|---|
+| base | — | `p-6` (24px) | viewport − 48px | 1 col |
+| `md` | 768px | `p-12` (48px) | viewport − 96px → **672px** min | 2 col |
+| `lg` | 1024px | `p-20` (80px) | viewport − 160px → **864px** | 3 col (contact) |
+| `xl` | 1280px | `px-0 py-[120px]` | **960px** max-width centered | 3 col |
+
+Page shell: `flex flex-col gap-10 p-6 md:p-12 lg:p-20 xl:max-w-[960px] xl:mx-auto xl:px-0 xl:py-[120px]`
+
+## Section structure
+
+```
+<main>                         flex-col gap-10
+  <header.intro>               flex-col → md:flex-row gap-7/8/20
+    <p.eyebrow-mobile>         block md:hidden
+    <div.photo>                aspect-[420/359] → md:flex-1 → lg:w-[150px]
+    <div.body>                 flex-col gap-7, md:flex-1
+      <p.eyebrow-desktop>      hidden md:block
+      <h1.name>                text-5xl, lg:whitespace-nowrap
+      <p.bio>                  xl:max-w-[500px]
+  <div.vt-grid>                flex-col → md:flex-row, gap-10/6/10
+    <section> × 2              flex-1 each
+  <section.profiles>           flex-col
+    <div.profiles-cols>        flex-col → md:flex-row gap-6/10
+      <div.col> × 2            flex-1 each
+  <section.contact>            flex-col
+    <div.contact-grid>         grid-cols-1 → md:grid-cols-2 → lg:grid-cols-3
+  <footer>                     flex justify-between
+```
+
+## Photo positioning
+
+The `<img>` inside `.photo` is `absolute inset-0 w-full h-full object-cover`. This removes intrinsic content from the div so that:
+- At mobile (`w-full aspect-[420/359]`): width is 100% (definite) → aspect-ratio resolves height correctly.
+- At `md` (`flex-1 self-stretch aspect-auto`): height = body column height via stretch; width = flex growth.
+- At `lg` (`flex-none w-[150px] self-stretch`): width is fixed; height = body column height via stretch.
+
+## Row pattern
+
+Every clickable row uses `group` for child hover effects:
+
+```html
+<a class="group flex items-center justify-between gap-4 py-[13px] px-1
+           border-b border-black/[.08]
+           transition-all duration-150
+           hover:bg-black/[.035] hover:pl-2" href="...">
+  <span class="flex items-center gap-3.5 shrink-0">
+    <img class="shrink-0 w-[18px] h-[18px] object-contain" ... />
+    <span class="text-base font-semibold whitespace-nowrap">Name</span>
+  </span>
+  <span class="flex items-center gap-2 text-[13px] min-w-0">
+    <span class="text-muted ... transition-colors duration-150 group-hover:text-black">@handle</span>
+    <span class="shrink-0 font-mono transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+  </span>
+</a>
+```
+
+Ventures/Tinkering rows use `py-3.5` (14px) and `text-[17px]` for the name. All others use `py-[13px]` and `text-base`.
+
+## Panel head pattern
+
+```html
+<div class="flex items-baseline justify-between pb-2 border-b border-black/[.18] text-[11px] gap-4 whitespace-nowrap">
+  <span class="text-accent tracking-[0.04em]">SECTION LABEL</span>
+  <span class="text-muted">caption</span>
+</div>
+```
