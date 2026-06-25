@@ -116,17 +116,7 @@ a   { color: inherit; text-decoration: none; }
   line-height: 1.4;
 }
 
-/* Follow badge — inline (inside body): visible at ≤1023 */
-.follow-inline {
-  display: block;
-  flex-shrink: 0;
-  align-self: flex-start;
-}
-
-/* Follow badge — corner (outside body): hidden until ≥1024 */
-.follow-corner { display: none; }
-
-/* ── Intro — ≥640: two equal columns (photo | body+badge) ─────── */
+/* ── Intro — ≥640: two equal columns (photo | body) ───────────── */
 @media (min-width: 640px) {
   .intro {
     flex-direction: row;
@@ -137,11 +127,6 @@ a   { color: inherit; text-decoration: none; }
   .eyebrow-sm { display: none; }
   .eyebrow-lg { display: block; }
 
-  /*
-    640: photo grows equally with body (flex:1).
-    No aspect-ratio — height comes from align-self:stretch matching
-    the body column. The img fills via object-fit:cover.
-  */
   .photo {
     flex: 1 0 0;
     width: auto;
@@ -152,19 +137,10 @@ a   { color: inherit; text-decoration: none; }
   .intro-body { flex: 1 0 0; min-width: 0; }
 }
 
-/* ── Intro — ≥1024: photo | body | corner-badge ──────────────── */
+/* ── Intro — ≥1024: photo | body ─────────────────────────────── */
 @media (min-width: 1024px) {
   .intro { gap: 80px; }
 
-  /*
-    1024+: photo has a fixed width (150px, from Figma 1440 spec).
-    align-self:stretch makes height = body column height.
-    object-fit:cover crops the image to fit.
-    Using a definite width avoids the flex-basis:auto + abs-img
-    zero-size bug (aspect-ratio can only transfer from a definite
-    cross-axis size when the flex container has an explicit height,
-    which ours does not).
-  */
   .photo {
     flex: none;
     width: 150px;
@@ -172,16 +148,7 @@ a   { color: inherit; text-decoration: none; }
     align-self: stretch;
   }
 
-  /* Name stays on one line at desktop widths */
   .name { white-space: nowrap; }
-
-  /* Badge moves out of body to the top-right of the intro row */
-  .follow-inline { display: none; }
-  .follow-corner {
-    display: block;
-    flex-shrink: 0;
-    align-self: flex-start;
-  }
 }
 
 /* Constrain bio width at large viewports (Figma: w-[500px]) */
@@ -330,4 +297,10 @@ a   { color: inherit; text-decoration: none; }
 @media (min-width: 1440px) { .contact-grid { gap: 40px; } }
 
 /* ── Footer ───────────────────────────────────────────────────── */
-.footer { color: var(--muted); font-size: 11px; }
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 11px;
+}
