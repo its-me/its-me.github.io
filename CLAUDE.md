@@ -31,10 +31,10 @@ Body background is `#e9e9e9` (not in theme, applied as `bg-[#e9e9e9]`).
 |---|---|---|---|---|
 | base | — | `p-6` (24px) | viewport − 48px | 1 col |
 | `md` | 768px | `p-12` (48px) | viewport − 96px → **672px** min | 2 col |
-| `lg` | 1024px | `p-20` (80px) | viewport − 160px → **864px** | 3 col (contact) |
-| `xl` | 1280px | `px-0 py-[120px]` | **960px** max-width centered | 3 col |
+| `lg` | 1024px | `px-20 py-12` (80px / 48px) | viewport − 160px → **864px** | 3 col (contact) |
+| `xl` | 1280px | `px-0 py-16` (64px) | **960px** max-width centered | 3 col |
 
-Page shell: `flex flex-col gap-10 p-6 md:p-12 lg:p-20 xl:max-w-[960px] xl:mx-auto xl:px-0 xl:py-[120px]`
+Page shell: `flex flex-col gap-6 p-6 md:p-12 lg:px-20 lg:py-12 xl:max-w-[960px] xl:mx-auto xl:px-0 xl:py-16`
 
 ## Section structure
 
