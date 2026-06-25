@@ -1,23 +1,18 @@
 # its-me.github.io
 
-Personal site for **Sergey Kanafyev** — a single, static page.
+Personal site of **Sergey Kanafyev**, a single, static page.
 
-Published at https://its-me.github.io
+Published at [https://its-me.github.io](https://its-me.github.io).
 
 ## Stack
 
-Plain HTML + **Tailwind CSS** (Play CDN) — no build step, no dependencies. Font (Work Sans) loaded from Google Fonts; all icons and the portrait vendored under `assets/`.
-
-```
-index.html      # markup + Tailwind utility classes
-assets/         # portrait, brand icons (SVG), favicon
-CLAUDE.md       # layout reference for AI-assisted editing
-.nojekyll       # serve assets/ verbatim on GitHub Pages
-```
+- Plain HTML + Tailwind CSS via Play CDN, no build step
+- Work Sans from Google Fonts
+- Icons and portrait vendored under `assets/`
 
 ## Responsive layout
 
-Three breakpoints following Tailwind's default scale:
+Three breakpoints:
 
 | Breakpoint | Min-width | Padding | Content width |
 |---|---|---|---|
@@ -28,14 +23,12 @@ Three breakpoints following Tailwind's default scale:
 
 ## Local preview
 
-Open `index.html` directly, or serve the folder:
+Serve the folder:
 
 ```sh
 python3 -m http.server 8000
 ```
 
-then visit http://127.0.0.1:8000
+Then open [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
-## Editing content
-
-Names, links, and handles live as plain text in `index.html`. Colors and fonts are configured in the `tailwind.config` block at the top of `index.html`.
+Or open `index.html` directly in a browser.
