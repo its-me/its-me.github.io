@@ -39,7 +39,7 @@ Page shell: `flex flex-col gap-6 p-6 md:p-12 lg:px-20 lg:py-12 xl:max-w-[960px] 
 ## Section structure
 
 ```
-<main>                         flex-col gap-10
+<main>                         flex-col gap-6
   <header.intro>               flex-col → md:flex-row gap-7/8/20
     <p.eyebrow-mobile>         block md:hidden
     <div.photo>                aspect-[420/359] → md:flex-1 → lg:w-[150px]
@@ -56,6 +56,8 @@ Page shell: `flex flex-col gap-6 p-6 md:p-12 lg:px-20 lg:py-12 xl:max-w-[960px] 
     <div.contact-grid>         grid-cols-1 → md:grid-cols-2 → lg:grid-cols-3
   <footer>                     flex justify-between
 ```
+
+Contact grid uses `gap-x-6` (column gap only, **no row gap**). Using `gap-6` would add 24px between grid rows, creating a visible hole above WhatsApp in the 2-col layout where the third item wraps to row 2.
 
 ## Photo positioning
 
