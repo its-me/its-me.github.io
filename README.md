@@ -23,8 +23,8 @@ Three breakpoints following Tailwind's default scale:
 |---|---|---|---|
 | base | — | 24px | fluid |
 | `md` | 768px | 48px | fluid, 2-col |
-| `lg` | 1024px | 80px | fluid, 3-col contact |
-| `xl` | 1280px | 0 | 960px centered |
+| `lg` | 1024px | 80px | fluid, 2-col |
+| `xl` | 1280px | 0 | 960px centered, 3-col contact |
 
 ## Local preview
 
