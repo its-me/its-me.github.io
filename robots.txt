@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://its-me.github.io/sitemap.xml
