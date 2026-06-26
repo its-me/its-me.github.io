@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview — Images row (Option A)</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Work Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            accent: '#0078b8',
+            muted:  '#6e6e6e',
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-[#e9e9e9] text-black font-sans antialiased">
+
+  <main class="flex flex-col gap-6 p-6 md:p-12 lg:px-20 lg:py-12 xl:max-w-[960px] xl:mx-auto xl:px-0 xl:py-16">
+
+    <!-- ── Intro ─────────────────────────────────────────────── -->
+    <header class="flex flex-col gap-7 md:flex-row md:items-start md:gap-8 lg:gap-20">
+
+      <p class="block md:hidden text-accent text-xs tracking-[0.02em]">ENTREPRENEUR · ENGINEERING&nbsp;LEADER</p>
+
+      <div class="relative rounded-3xl overflow-hidden shrink-0 w-full aspect-[420/359] md:flex-none md:w-[220px] md:aspect-auto md:self-stretch lg:w-[200px] xl:w-[240px]">
+        <img class="absolute inset-0 w-full h-full object-cover" src="assets/photo.webp" alt="Portrait of Sergey Kanafyev" />
+      </div>
+
+      <div class="flex flex-col gap-7 md:flex-1 md:min-w-0">
+        <div class="flex flex-col gap-[22px]">
+          <p class="hidden md:block text-accent text-xs tracking-[0.02em]">ENTREPRENEUR · ENGINEERING&nbsp;LEADER</p>
+          <h1 class="text-[50px] font-medium leading-[0.96] tracking-[-0.015em] lg:whitespace-nowrap">Sergey Kanafyev</h1>
+        </div>
+        <p class="text-[17px] leading-[1.38] xl:max-w-[500px]">I am a&nbsp;tech-focused entrepreneur and engineering leader with over 20 years of experience across startups and software engineering. I&nbsp;specialize in transforming complex technical challenges into scalable business assets.</p>
+      </div>
+
+    </header>
+
+    <!-- ── Ventures + Tinkering ──────────────────────────────── -->
+    <div class="flex flex-col gap-10 md:flex-row md:gap-6 xl:gap-10">
+
+      <section class="flex flex-col min-w-0 flex-1">
+        <div class="flex items-baseline justify-between pb-2 border-b border-black/[.18] text-[11px] gap-4 whitespace-nowrap">
+          <span class="text-accent tracking-[0.04em]">VENTURES</span>
+          <span class="text-muted">what I'm building</span>
+        </div>
+        <div class="flex items-center justify-between gap-4 py-3.5 px-1 border-b border-black/[.08]">
+          <span class="flex items-center gap-3.5 shrink-0">
+            <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/wheelers.svg" alt="" aria-hidden="true" />
+            <span class="text-[18px] font-semibold whitespace-nowrap">Wheelers</span>
+          </span>
+          <a class="flex items-center gap-2 text-[14px] min-w-0" href="https://wheele.rs" target="_blank" rel="noopener">
+            <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">Founder &amp; CEO</span>
+            <span class="shrink-0">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="flex flex-col min-w-0 flex-1">
+        <div class="flex items-baseline justify-between pb-2 border-b border-black/[.18] text-[11px] gap-4 whitespace-nowrap">
+          <span class="text-accent tracking-[0.04em]">TINKERING</span>
+          <span class="text-muted">off the clock</span>
+        </div>
+        <div class="flex items-center justify-between gap-4 py-3.5 px-1 border-b border-black/[.08]">
+          <span class="flex items-center gap-3.5 shrink-0">
+            <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/archlinux.svg" alt="" aria-hidden="true" />
+            <span class="text-[18px] font-semibold whitespace-nowrap">AUR Packages</span>
+          </span>
+          <a class="flex items-center gap-2 text-[14px] min-w-0" href="https://aur.archlinux.org/packages?SeB=M&amp;K=itsme" target="_blank" rel="noopener">
+            <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@itsme</span>
+            <span class="shrink-0">↗</span>
+          </a>
+        </div>
+        <div class="flex items-center justify-between gap-4 py-3.5 px-1 border-b border-black/[.08]">
+          <span class="flex items-center gap-3.5 shrink-0">
+            <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/container.svg" alt="" aria-hidden="true" />
+            <span class="text-[18px] font-semibold whitespace-nowrap">Images</span>
+          </span>
+          <span class="flex items-center gap-3 text-[14px] shrink-0">
+            <a class="flex items-center gap-1.5 text-muted" href="https://github.com/its-me?tab=packages" target="_blank" rel="noopener">GHCR <span>↗</span></a>
+            <span class="text-black/20">·</span>
+            <a class="flex items-center gap-1.5 text-muted" href="https://hub.docker.com/u/1tsme" target="_blank" rel="noopener">Hub <span>↗</span></a>
+          </span>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ── Profiles ──────────────────────────────────────────── -->
+    <section class="flex flex-col min-w-0">
+      <div class="flex items-baseline justify-between pb-2 border-b border-black/[.18] text-[11px] gap-4 whitespace-nowrap">
+        <span class="text-accent tracking-[0.04em]">PROFILES</span>
+        <span class="text-muted">around the web</span>
+      </div>
+      <div class="flex flex-col md:flex-row md:gap-6 xl:gap-10">
+
+        <div class="flex-1 min-w-0 flex flex-col">
+          <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
+            <span class="flex items-center gap-3.5 shrink-0">
+              <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/linkedin.svg" alt="" aria-hidden="true" />
+              <span class="text-[17px] font-semibold whitespace-nowrap">LinkedIn</span>
+            </span>
+            <a class="flex items-center gap-2 text-[14px] min-w-0" href="https://www.linkedin.com/in/sergey-kanafyev" target="_blank" rel="noopener">
+              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@sergey-kanafyev</span>
+              <span class="shrink-0">↗</span>
+            </a>
+          </div>
+          <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
+            <span class="flex items-center gap-3.5 shrink-0">
+              <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/github.svg" alt="" aria-hidden="true" />
+              <span class="text-[17px] font-semibold whitespace-nowrap">GitHub</span>
+            </span>
+            <a class="flex items-center gap-2 text-[14px] min-w-0" href="https://github.com/its-me" target="_blank" rel="noopener">
+              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@its-me</span>
+              <span class="shrink-0">↗</span>
+            </a>
+          </div>
+          <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
+            <span class="flex items-center gap-3.5 shrink-0">
+              <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/x.svg" alt="" aria-hidden="true" />
+              <span class="text-[17px] font-semibold whitespace-nowrap">X</span>
+            </span>
+            <a class="flex items-center gap-2 text-[14px] min-w-0" href="https://x.com/kanafyev" target="_blank" rel="noopener">
+              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@kanafyev</span>
+              <span class="shrink-0">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex-1 min-w-0 flex flex-col">
+          <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
+            <span class="flex items-center gap-3.5 shrink-0">
+              <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/facebook.svg" alt="" aria-hidden="true" />
+              <span class="text-[17px] font-semibold whitespace-nowrap">Facebook</span>
+            </span>
+            <a class="flex items-center gap-2 text-[14px] min-w-0" href="https://www.facebook.com/skanafev" target="_blank" rel="noopener">
+              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@skanafev</span>
+              <span class="shrink-0">↗</span>
+            </a>
+          </div>
+          <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
+            <span class="flex items-center gap-3.5 shrink-0">
+              <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/instagram.svg" alt="" aria-hidden="true" />
+              <span class="text-[17px] font-semibold whitespace-nowrap">Instagram</span>
+            </span>
+            <a class="flex items-center gap-2 text-[14px] min-w-0" href="https://www.instagram.com/sergey.kanafyev" target="_blank" rel="noopener">
+              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@sergey.kanafyev</span>
+              <span class="shrink-0">↗</span>
+            </a>
+          </div>
+          <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
+            <span class="flex items-center gap-3.5 shrink-0">
+              <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/threads.svg" alt="" aria-hidden="true" />
+              <span class="text-[17px] font-semibold whitespace-nowrap">Threads</span>
+            </span>
+            <a class="flex items-center gap-2 text-[14px] min-w-0" href="https://www.threads.com/@sergey.kanafyev" target="_blank" rel="noopener">
+              <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@sergey.kanafyev</span>
+              <span class="shrink-0">↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Get in touch ──────────────────────────────────────── -->
+    <section class="flex flex-col min-w-0">
+      <div class="flex items-baseline justify-between pb-2 border-b border-black/[.18] text-[11px] gap-4 whitespace-nowrap">
+        <span class="text-accent tracking-[0.04em]">GET IN TOUCH</span>
+        <span class="text-muted">direct lines</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 md:gap-x-6 xl:grid-cols-3">
+        <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08] md:border-r">
+          <span class="flex items-center gap-3.5 shrink-0">
+            <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/mail.svg" alt="" aria-hidden="true" />
+            <span class="text-[17px] font-semibold whitespace-nowrap">Email</span>
+          </span>
+          <a class="flex items-center gap-2 text-[14px] min-w-0" data-h="bWFpbHRvOnNlcmdleWthbmFmeWV2QGdtYWlsLmNvbQ==" data-t="c2VyZ2V5a2FuYWZ5ZXZAZ21haWwuY29t">
+            <span class="text-muted"></span>
+            <span class="shrink-0">↗</span>
+          </a>
+        </div>
+        <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08] xl:border-r">
+          <span class="flex items-center gap-3.5 shrink-0">
+            <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/telegram.svg" alt="" aria-hidden="true" />
+            <span class="text-[17px] font-semibold whitespace-nowrap">Telegram</span>
+          </span>
+          <a class="flex items-center gap-2 text-[14px] min-w-0" target="_blank" rel="noopener" data-h="aHR0cHM6Ly90Lm1lL2thbmFmeWV2" data-t="QGthbmFmeWV2">
+            <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap"></span>
+            <span class="shrink-0">↗</span>
+          </a>
+        </div>
+        <div class="flex items-center justify-between gap-4 py-[13px] px-1 border-b border-black/[.08]">
+          <span class="flex items-center gap-3.5 shrink-0">
+            <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/whatsapp.svg" alt="" aria-hidden="true" />
+            <span class="text-[17px] font-semibold whitespace-nowrap">WhatsApp</span>
+          </span>
+          <a class="flex items-center gap-2 text-[14px] min-w-0" target="_blank" rel="noopener" data-h="aHR0cHM6Ly93YS5tZS82MjgxMjM3NzAyMTYw" data-t="KzYyIDgxMi0zNzcwLTIxNjA=">
+            <span class="text-muted whitespace-nowrap"></span>
+            <span class="shrink-0">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="flex items-center justify-between text-muted text-[11px]">
+      <span>© 2026 Sergey Kanafyev</span>
+      <a class="github-button" href="https://github.com/its-me/its-me.github.io/issues" data-color-scheme="no-preference: light; light: light; dark: light;" aria-label="Issue its-me/its-me.github.io on GitHub">Issue</a>
+    </footer>
+
+  </main>
+  <script>
+    document.querySelectorAll('a[data-h]').forEach(a => {
+      a.href = atob(a.dataset.h);
+      if (a.dataset.t) a.querySelector('span').textContent = atob(a.dataset.t);
+    });
+  </script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>
