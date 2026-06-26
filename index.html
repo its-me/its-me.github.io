@@ -200,8 +200,8 @@
             <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/mail.svg" alt="" aria-hidden="true" />
             <span class="text-[17px] font-semibold whitespace-nowrap">Email</span>
           </span>
-          <a class="flex items-center gap-2 text-[14px] min-w-0" href="mailto:sergeykanafyev@gmail.com">
-            <span class="text-muted">sergeykanafyev@gmail.com</span>
+          <a class="flex items-center gap-2 text-[14px] min-w-0" data-h="bWFpbHRvOnNlcmdleWthbmFmeWV2QGdtYWlsLmNvbQ==" data-t="c2VyZ2V5a2FuYWZ5ZXZAZ21haWwuY29t">
+            <span class="text-muted"></span>
             <span class="shrink-0">↗</span>
           </a>
         </div>
@@ -210,8 +210,8 @@
             <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/telegram.svg" alt="" aria-hidden="true" />
             <span class="text-[17px] font-semibold whitespace-nowrap">Telegram</span>
           </span>
-          <a class="flex items-center gap-2 text-[14px] min-w-0" href="https://t.me/kanafyev" target="_blank" rel="noopener">
-            <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap">@kanafyev</span>
+          <a class="flex items-center gap-2 text-[14px] min-w-0" target="_blank" rel="noopener" data-h="aHR0cHM6Ly90Lm1lL2thbmFmeWV2" data-t="QGthbmFmeWV2">
+            <span class="text-muted overflow-hidden text-ellipsis whitespace-nowrap"></span>
             <span class="shrink-0">↗</span>
           </a>
         </div>
@@ -220,8 +220,8 @@
             <img class="shrink-0 w-[18px] h-[18px] object-contain" src="assets/whatsapp.svg" alt="" aria-hidden="true" />
             <span class="text-[17px] font-semibold whitespace-nowrap">WhatsApp</span>
           </span>
-          <a class="flex items-center gap-2 text-[14px] min-w-0" href="https://wa.me/6281237702160" target="_blank" rel="noopener">
-            <span class="text-muted whitespace-nowrap">+62 812-3770-2160</span>
+          <a class="flex items-center gap-2 text-[14px] min-w-0" target="_blank" rel="noopener" data-h="aHR0cHM6Ly93YS5tZS82MjgxMjM3NzAyMTYw" data-t="KzYyIDgxMi0zNzcwLTIxNjA=">
+            <span class="text-muted whitespace-nowrap"></span>
             <span class="shrink-0">↗</span>
           </a>
         </div>
@@ -234,6 +234,12 @@
     </footer>
 
   </main>
+  <script>
+    document.querySelectorAll('a[data-h]').forEach(a => {
+      a.href = atob(a.dataset.h);
+      if (a.dataset.t) a.querySelector('span').textContent = atob(a.dataset.t);
+    });
+  </script>
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
