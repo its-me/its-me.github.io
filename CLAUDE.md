@@ -91,6 +91,24 @@ Rows are non-interactive `<div>`s. Only the handle + arrow on the right side is 
 
 Ventures/Tinkering rows use `py-3.5` (14px) and `text-[18px]` for the name. All others use `py-[13px]` and `text-[17px]`. The ↗ arrow inherits the main font (no `font-mono`).
 
+### Dual-link row variant
+
+When a row has two destinations (e.g. Images → GHCR + Hub), the right side is a `<span>` containing two `<a>` elements separated by a muted dot, rather than a single `<a>`:
+
+```html
+<span class="flex items-center gap-3 text-[14px] shrink-0">
+  <a class="flex items-center gap-2" href="..." target="_blank" rel="noopener">
+    <span class="text-muted">GHCR</span><span class="shrink-0">↗</span>
+  </a>
+  <span class="text-black/20">·</span>
+  <a class="flex items-center gap-2" href="..." target="_blank" rel="noopener">
+    <span class="text-muted">Hub</span><span class="shrink-0">↗</span>
+  </a>
+</span>
+```
+
+`text-muted` is on the label `<span>` only — the arrow inherits black from the body, matching the standard single-link pattern.
+
 ### Right-side span classes by content type
 
 | Content | Classes on the inner `<span>` |
@@ -100,6 +118,26 @@ Ventures/Tinkering rows use `py-3.5` (14px) and `text-[18px]` for the name. All 
 | Phone number | `text-muted whitespace-nowrap` — prevents breaks at hyphens; no truncation |
 
 `overflow-hidden` on a flex item implicitly sets `min-width: 0`, allowing it to shrink and activating ellipsis. Omitting it (email, phone) keeps `min-width: auto` so the span never clips its content.
+
+## Contact obfuscation
+
+Email, Telegram, and WhatsApp `href` and display text are base64-encoded in `data-h` / `data-t` attributes to deter scrapers. An inline script at the bottom of `<body>` decodes and injects them at runtime:
+
+```html
+<a data-h="<base64 href>" data-t="<base64 text>" ...>
+  <span class="text-muted"><!-- filled by JS --></span>
+  <span class="shrink-0">↗</span>
+</a>
+```
+
+```js
+document.querySelectorAll('a[data-h]').forEach(a => {
+  a.href = atob(a.dataset.h);
+  if (a.dataset.t) a.querySelector('span').textContent = atob(a.dataset.t);
+});
+```
+
+Use ASCII-safe values only — `atob` operates on Latin-1, not UTF-8. Replace non-breaking spaces with regular spaces before encoding.
 
 ## Panel head pattern
 
