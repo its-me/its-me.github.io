@@ -2,7 +2,7 @@
 
 Personal site of **Sergey Kanafyev**, a single, static page.
 
-Published at [https://its-me.github.io](https://its-me.github.io).
+Published at [https://kanafyev.me/](https://kanafyev.me/).
 
 ## Stack
 
